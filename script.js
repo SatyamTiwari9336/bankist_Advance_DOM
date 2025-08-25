@@ -127,3 +127,21 @@ const alerth1 = function () {
 const h1 = document.querySelector('h1');
 
 h1.addEventListener('mouseenter', alerth1);
+
+//event propogation
+const randomint = (min, max) => {
+  return Math.trunc(Math.random() * (max - min)) + min;
+  // console.log(rand);
+};
+
+const randcolor = () =>
+  `rgb(${randomint(0, 255)},${randomint(0, 255)},${randomint(0, 255)})`;
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randcolor();
+});
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randcolor();
+});
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randcolor();
+});
