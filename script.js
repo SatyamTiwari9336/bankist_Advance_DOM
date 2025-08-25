@@ -119,3 +119,11 @@ btnscrollto.addEventListener('click', function (e) {
   });
   // section1.scrollIntoView({ behavior: 'smooth' }); //any of these can be used
 });
+
+const alerth1 = function () {
+  alert('you are reading the heading');
+  h1.removeEventListener('mouseenter', alerth1); //just after 1 operation it removes that operation so that it does not repeat always
+};
+const h1 = document.querySelector('h1');
+
+h1.addEventListener('mouseenter', alerth1);
