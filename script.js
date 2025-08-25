@@ -31,5 +31,15 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
-
+///////////////////////////////////////////
+//lecture
 //when we click a button with href # it jumps directly to the top to remove this we use e.preventdefault()
+console.log(document.body);
+
+const allsections = document.querySelectorAll('.section');
+console.log(allsections);
+
+document.getElementById('section--1');
+//is using query selector and want id name use # with it
+const allbutton = document.getElementsByTagName('button');
+console.log(allbutton);
