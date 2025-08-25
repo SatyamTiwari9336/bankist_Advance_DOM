@@ -34,6 +34,7 @@ document.addEventListener('keydown', function (e) {
 ///////////////////////////////////////////
 //lecture
 //when we click a button with href # it jumps directly to the top to remove this we use e.preventdefault()
+const header = document.querySelector('header');
 console.log(document.body);
 
 const allsections = document.querySelectorAll('.section');
@@ -43,3 +44,21 @@ document.getElementById('section--1');
 //is using query selector and want id name use # with it
 const allbutton = document.getElementsByTagName('button');
 console.log(allbutton);
+//creating and inserting elements
+//.insertAdjacentHTML
+//adding cookie functionality
+
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.textContent = 'we use cookie for better performance';
+message.innerHTML = `we use cookie for better performance.<button class="btn btn--close-cookie">got it</button>`;
+// header.prepend(message); //to add at start of header
+header.append(message); //to add last of page
+
+//same methods are haeder.before(message) and header.after(message)
+document
+  .querySelector('.btn--close-cookie')
+  .addEventListener('click', function () {
+    // message.remove();
+    message.parentElement.removeChild(message);
+  });
