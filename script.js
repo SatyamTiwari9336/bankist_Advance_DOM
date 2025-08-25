@@ -32,4 +32,4 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-//when we click a button with href # it jumps directly to the top
+//when we click a button with href # it jumps directly to the top to remove this we use e.preventdefault()
