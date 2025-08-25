@@ -68,3 +68,30 @@ message.style.backgroundColor = '#37383d';
 message.style.width = '104%';
 console.log(getComputedStyle(message).color);
 console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height) + 30 + 'px';
+
+//to change the custom properties used in css
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+//attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.className);
+logo.alt = 'beatiful minimlist logo';
+
+//non standard
+console.log(logo.designer);
+console.log(logo.getAttribute('designer'));
+
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+console.log(logo.dataset.versionNumber);
+
+//classes
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c');
+logo.classList.contains('c');
+// logo.className="jonas"
