@@ -31,6 +31,7 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+/*
 ///////////////////////////////////////////
 //lecture
 //when we click a button with href # it jumps directly to the top to remove this we use e.preventdefault()
@@ -95,3 +96,26 @@ logo.classList.remove('c', 'j');
 logo.classList.toggle('c');
 logo.classList.contains('c');
 // logo.className="jonas"
+*/
+
+const btnscrollto = document.querySelector('.btn--scroll-to');
+const section1 = document.getElementById('section--1');
+
+btnscrollto.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log(e.target.getBoundingClientRect());
+  console.log('scroll x - y', scrollX, scrollY);
+  console.log(
+    'heioght-width',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  window.scrollTo({
+    left: s1coords.left + window.scrollX,
+    top: s1coords.top + window.scrollY,
+    behavior: 'smooth',
+  });
+  // section1.scrollIntoView({ behavior: 'smooth' }); //any of these can be used
+});
