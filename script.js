@@ -41,7 +41,7 @@ const allsections = document.querySelectorAll('.section');
 console.log(allsections);
 
 document.getElementById('section--1');
-//is using query selector and want id name use # with it
+//if using query selector and want id name use # with it
 const allbutton = document.getElementsByTagName('button');
 console.log(allbutton);
 //creating and inserting elements
@@ -50,10 +50,10 @@ console.log(allbutton);
 
 const message = document.createElement('div');
 message.classList.add('cookie-message');
-message.textContent = 'we use cookie for better performance';
+// message.textContent = 'we use cookie for better performance';
 message.innerHTML = `we use cookie for better performance.<button class="btn btn--close-cookie">got it</button>`;
 // header.prepend(message); //to add at start of header
-header.append(message); //to add last of page
+header.append(message); //to add last of header
 
 //same methods are haeder.before(message) and header.after(message)
 document
@@ -62,3 +62,9 @@ document
     // message.remove();
     message.parentElement.removeChild(message);
   });
+////////////////////////////////////////////
+//styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '104%';
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
