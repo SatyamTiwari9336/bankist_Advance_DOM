@@ -141,8 +141,10 @@ document.querySelector('.nav__link').addEventListener('click', function (e) {
 });
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   this.style.backgroundColor = randcolor();
+  // e.stopPropagation();
 });
 document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randcolor();
 });
 //to stop effecting parent elements use e.stopPropogation
+//new add
