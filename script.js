@@ -163,3 +163,17 @@ logo.classList.contains('c');
 // });
 //to stop effecting parent elements use e.stopPropogation
 //new add
+//DOM traversing
+//going downwards
+let h1 = document.querySelector('h1');
+console.log(h1.querySelector('.highlight'));
+console.log(h1.childNodes);
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'orangered';
+//going upwards
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+h1.closest('.header').style.background = 'var(--gradient-primary)';
+h1.closest('h1').style.background = 'var(--gradient-secondary)';
+
+//going sideways
