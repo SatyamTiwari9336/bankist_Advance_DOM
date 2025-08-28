@@ -60,7 +60,7 @@ btnscrollto.addEventListener('click', function (e) {
 //     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
 //   });
 // });
-
+//event delegation ⬇️⬇️
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
   if (e.target.classList.contains('nav__link')) {
@@ -170,6 +170,7 @@ console.log(h1.querySelector('.highlight'));
 console.log(h1.childNodes);
 h1.firstElementChild.style.color = 'white';
 h1.lastElementChild.style.color = 'orangered';
+
 //going upwards
 console.log(h1.parentNode);
 console.log(h1.parentElement);
@@ -177,3 +178,14 @@ h1.closest('.header').style.background = 'var(--gradient-primary)';
 h1.closest('h1').style.background = 'var(--gradient-secondary)';
 
 //going sideways
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+console.log(h1.nextSibling);
+console.log(h1.previousSibling);
+
+console.log(h1.parentElement.children);
+[...h1.parentElement.children].forEach(function (el) {
+  if (el != h1) {
+    el.style.transform = 'scale(.5)';
+  }
+});
