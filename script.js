@@ -1,5 +1,7 @@
 'use strict';
 
+const btnscrollto = document.querySelector('.btn--scroll-to');
+const section1 = document.getElementById('section--1');
 ///////////////////////////////////////
 // Modal window
 
@@ -30,6 +32,25 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
   }
+});
+
+btnscrollto.addEventListener('click', function (e) {
+  // const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords);
+  // console.log(e.target.getBoundingClientRect());
+  // console.log('scroll x - y', scrollX, scrollY);
+  // console.log(
+  //   'height-width',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.scrollX,
+  //   top: s1coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // });
+  section1.scrollIntoView({ behavior: 'smooth' }); //any of these can be used
 });
 /*
 ///////////////////////////////////////////
@@ -98,53 +119,31 @@ logo.classList.contains('c');
 // logo.className="jonas"
 */
 
-const btnscrollto = document.querySelector('.btn--scroll-to');
-const section1 = document.getElementById('section--1');
+// const alerth1 = function () {
+//   alert('you are reading the heading');
+//   h1.removeEventListener('mouseenter', alerth1); //just after 1 operation it removes that operation so that it does not repeat always
+// };
+// const h1 = document.querySelector('h1');
 
-btnscrollto.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
-  console.log(e.target.getBoundingClientRect());
-  console.log('scroll x - y', scrollX, scrollY);
-  console.log(
-    'heioght-width',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+// h1.addEventListener('mouseenter', alerth1);
 
-  window.scrollTo({
-    left: s1coords.left + window.scrollX,
-    top: s1coords.top + window.scrollY,
-    behavior: 'smooth',
-  });
-  // section1.scrollIntoView({ behavior: 'smooth' }); //any of these can be used
-});
+// //event propogation
+// const randomint = (min, max) => {
+//   return Math.trunc(Math.random() * (max - min)) + min;
+//   // console.log(rand);
+// };
 
-const alerth1 = function () {
-  alert('you are reading the heading');
-  h1.removeEventListener('mouseenter', alerth1); //just after 1 operation it removes that operation so that it does not repeat always
-};
-const h1 = document.querySelector('h1');
-
-h1.addEventListener('mouseenter', alerth1);
-
-//event propogation
-const randomint = (min, max) => {
-  return Math.trunc(Math.random() * (max - min)) + min;
-  // console.log(rand);
-};
-
-const randcolor = () =>
-  `rgb(${randomint(0, 255)},${randomint(0, 255)},${randomint(0, 255)})`;
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randcolor();
-});
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgroundColor = randcolor();
-  // e.stopPropagation();
-});
-document.querySelector('.nav').addEventListener('click', function (e) {
-  this.style.backgroundColor = randcolor();
-});
+// const randcolor = () =>
+//   `rgb(${randomint(0, 255)},${randomint(0, 255)},${randomint(0, 255)})`;
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randcolor();
+// });
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randcolor();
+//   // e.stopPropagation();
+// });
+// document.querySelector('.nav').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randcolor();
+// });
 //to stop effecting parent elements use e.stopPropogation
 //new add
