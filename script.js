@@ -80,8 +80,19 @@ tabsContainer.addEventListener('click', function (e) {
   if (!clicked) return;
   //active tab
   tabs.forEach(el => el.classList.remove('operations__tab--active'));
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+
   clicked.classList.add('operations__tab--active');
+
+  //show content of active tab
+  // console.log(clicked.dataset.tab);
+
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
 });
+
+//Menu fade animation
 /*
 ///////////////////////////////////////////
 ///////////////////////////////////////////
