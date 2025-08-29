@@ -68,7 +68,23 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
+
+//tabbed content
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+
+  if (!clicked) return;
+  //active tab
+  tabs.forEach(el => el.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+});
 /*
+///////////////////////////////////////////
+///////////////////////////////////////////
 ///////////////////////////////////////////
 //lecture
 //when we click a button with href # it jumps directly to the top to remove this we use e.preventdefault()
@@ -133,7 +149,6 @@ logo.classList.remove('c', 'j');
 logo.classList.toggle('c');
 logo.classList.contains('c');
 // logo.className="jonas"
-*/
 
 // const alerth1 = function () {
 //   alert('you are reading the heading');
@@ -163,6 +178,7 @@ logo.classList.contains('c');
 // });
 //to stop effecting parent elements use e.stopPropogation
 //new add
+////////////////////////////////////////////////////////
 //DOM traversing
 //going downwards
 let h1 = document.querySelector('h1');
@@ -189,3 +205,4 @@ console.log(h1.parentElement.children);
     el.style.transform = 'scale(.5)';
   }
 });
+*/
