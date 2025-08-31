@@ -140,6 +140,9 @@ const headObserver = new IntersectionObserver(stickyNav, {
   rootMargin: '-90px',
 });
 headObserver.observe(header);
+
+//Reveal Sections
+
 /*
 //new
 ///////////////////////////////////////////
