@@ -184,6 +184,41 @@ const imageObserver = new IntersectionObserver(loadimg, {
 
 imageTargets.forEach(img => imageObserver.observe(img));
 
+//sliding component on bottom
+const slides = document.querySelectorAll('.slide');
+const btnleft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+let curslide = 0;
+let maxSlide = slides.length;
+const slider = document.querySelector('.slider');
+// slider.style.transform = 'scale(0.4) translateX(-800px)';
+// slider.style.overflow = 'visible';
+// slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i})%`));
+
+const gotoslide = function (slide) {
+  slides.forEach(
+    (el, i) => (el.style.transform = `translateX(${100 * (i - curslide)}%)`)
+  );
+};
+gotoslide(0);
+const nextslide = function () {
+  if (curslide === maxSlide - 1) {
+    curslide = 0;
+  } else {
+    curslide++;
+  }
+  gotoslide(curslide);
+};
+const prevslide = function () {
+  if (curslide === 0) {
+    curslide = maxSlide;
+  }
+  curslide--;
+  gotoslide(curslide);
+};
+btnRight.addEventListener('click', nextslide);
+btnleft.addEventListener('click', prevslide);
 /*
 //new
 ///////////////////////////////////////////
