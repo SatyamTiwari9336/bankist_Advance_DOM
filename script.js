@@ -163,7 +163,7 @@ allsections.forEach(function (section) {
 
 //lazy loading of images (good for performance )
 const imageTargets = document.querySelectorAll('img[data-src]');
-const loadimg = function (entries, imageObserver) {
+const loading = function (entries, imageObserver) {
   const [entry] = entries;
   console.log(entry);
   if (!entry.isIntersecting) return;
@@ -176,7 +176,7 @@ const loadimg = function (entries, imageObserver) {
   imageObserver.unobserve(entry.target);
 };
 
-const imageObserver = new IntersectionObserver(loadimg, {
+const imageObserver = new IntersectionObserver(loading, {
   root: null,
   threshold: 0,
   rootMargin: '200px',
