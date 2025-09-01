@@ -160,7 +160,29 @@ allsections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add('section--hidden');
 });
-/*
+
+//lazy loading of images (good for performance )
+const imageTargets = document.querySelectorAll('img[data-src]');
+const loadimg = function (entries, imageObserver) {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) return;
+  //replcing src with dta src
+  entry.target.src = entry.target.dataset.src;
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img');
+  });
+  imageObserver.unobserve(entry.target);
+};
+
+const imageObserver = new IntersectionObserver(loadimg, {
+  root: null,
+  threshold: 0,
+  rootMargin: '200px',
+});
+
+imageTargets.forEach(img => imageObserver.observe(img)); /*
 //new
 ///////////////////////////////////////////
 ///////////////////////////////////////////
