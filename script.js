@@ -137,21 +137,28 @@ const stickyNav = function (entries) {
 const headObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
-  rootMargin: '-90px',
+  rootMargin: `${NavHeight}px`,
 });
 headObserver.observe(header);
 
 //Reveal Sections
 const allsections = document.querySelectorAll('.section');
 const revealSecions = function (entries, observer) {
-  allsections.forEach(function (section) {
-    sectionObserver.observe(section);
-    section.classList.add('section--hidden');
-  });
+  const [entry] = entries;
+  console.log(entry);
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
 };
 const sectionObserver = new IntersectionObserver(revealSecions, {
-  root: 0,
-  threshold: 0,
+  root: null,
+  threshold: 0.15,
+});
+allsections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
 });
 /*
 //new
