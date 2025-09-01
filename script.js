@@ -167,7 +167,7 @@ const loading = function (entries, imageObserver) {
   const [entry] = entries;
   console.log(entry);
   if (!entry.isIntersecting) return;
-  //replcing src with dta src
+  //replacing src with data src
   entry.target.src = entry.target.dataset.src;
 
   entry.target.addEventListener('load', function () {
