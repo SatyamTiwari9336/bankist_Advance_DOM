@@ -385,7 +385,9 @@ console.log(h1.parentElement.children);
     el.style.transform = 'scale(.5)';
   }
 });
-
-// lifecycle dom events 
-
 */
+// lifecycle dom events
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('Html parsed and dom tree built', e);
+});
