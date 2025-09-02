@@ -395,3 +395,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
 window.addEventListener('load', function (e) {
   console.log('page fully loaded ', e);
 });
+
+// //to do something when page closed
+//return value is removed now
+// window.addEventListener('beforeunload', function (e) {
+//   e.returnValue = ' ';
+// });
